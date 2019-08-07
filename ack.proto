@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ack;
+option go_package="ackpb";
+
+
+message AckReq {
+    string msg = 1;
+}
+
+message AckRes {
+    string msg = 1;
+}
+
+service AckService {
+    rpc SendAck(AckReq) returns (AckRes) {};
+}
